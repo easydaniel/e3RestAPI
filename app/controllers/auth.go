@@ -2,7 +2,7 @@ package controllers
 
 import (
 	"github.com/revel/revel"
-  "e3plus/app/routes"
+  "e3RestAPI/app/routes"
 )
 
 type Auth struct {
