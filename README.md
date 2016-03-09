@@ -8,8 +8,8 @@
     go get github.com/revel/cmd/revel
 
 ### Get project
-    git clone http://github.com/easydanie/e3RestAPI $GOPATH/src/
-  - Your project will be in $GOPATH/src/e3plus
+    git clone http://github.com/easydanie/e3RestAPI $GOPATH/src/e3RestAPI
+  - Your project will be in $GOPATH/src/e3RestAPI
 
 ### Runserver
-    PORT=<PORT> revel run e3plus
+    PORT=<PORT> revel run e3RestAPI
