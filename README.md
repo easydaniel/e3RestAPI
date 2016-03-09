@@ -2,7 +2,7 @@
 
 ### Set environment variable for GO
     export GOPATH=`pwd`
-    export PATH=`$PATH:$GOPATH/bin`
+    export PATH="$PATH:$GOPATH/bin"
     git clone http://github.com/easydanie/e3RestAPI $GOPATH/src/
 
 ### Get Revel
