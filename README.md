@@ -1,6 +1,8 @@
 # Rest API for E3
 
 ### Set environment variable for GO and get revel
+    mkdir <projectname>
+    cd <projectname>
     export GOPATH=`pwd`
     export PATH="$PATH:$GOPATH/bin"
     go get github.com/revel/cmd/revel
