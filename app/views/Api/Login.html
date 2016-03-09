@@ -1,0 +1,32 @@
+{{set . "title" "Auth"}}
+{{template "header.html" .}}
+
+<header class="hero-unit">
+  <div class="container">
+    <div class="row">
+      <div class="hero-text">
+        <form action="/api/login" method="post">
+          Username
+          <br>
+          <input type="text" name="username">
+          <br> Passwd
+          <br>
+          <input type="password" name="passwd">
+          <br>
+          <input type="submit" value="Submit">
+        </form>
+        <p></p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="span6">
+      {{template "flash.html" .}}
+    </div>
+  </div>
+</div>
+
+{{template "footer.html" .}}
