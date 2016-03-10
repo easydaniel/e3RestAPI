@@ -28,10 +28,10 @@
 - [ ] ForgotPassword
 - [x] GetAnnouncementDetail
 - [x] GetAnnouncementList
-- [x] GetAnnouncementListWithAttach (Same as GetAnnouncementList)
+~~- [ ] GetAnnouncementListWithAttach (Same as GetAnnouncementList)~~
 - [x] GetAnnouncementList_Login
 - [x] GetAnnouncementList_LoginByCount
-- [x] GetAnnouncementList_LoginByCountWithAttach (Same as GetAnnouncementList_LoginByCount)
+~~- [ ] GetAnnouncementList_LoginByCountWithAttach (Same as GetAnnouncementList_LoginByCount)~~
 - [ ] GetAttachFileList
 - [ ] GetAttachFiles
 - [ ] GetBoardMessage
@@ -101,5 +101,3 @@
 - [ ] SetQuizInfo
 - [ ] SetQuizQuestionInfo
 - [ ] SetStuHomeworkScore
-- [ ] TEST_APNs
-- [ ] showData
