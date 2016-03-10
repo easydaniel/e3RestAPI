@@ -28,10 +28,10 @@
 - [ ] ForgotPassword
 - [x] GetAnnouncementDetail
 - [x] GetAnnouncementList
-~~- [ ] GetAnnouncementListWithAttach (Same as GetAnnouncementList)~~
+- ~~[ ] GetAnnouncementListWithAttach (Same as GetAnnouncementList)~~
 - [x] GetAnnouncementList_Login
 - [x] GetAnnouncementList_LoginByCount
-~~- [ ] GetAnnouncementList_LoginByCountWithAttach (Same as GetAnnouncementList_LoginByCount)~~
+- ~~[ ] GetAnnouncementList_LoginByCountWithAttach (Same as GetAnnouncementList_LoginByCount)~~
 - [ ] GetAttachFileList
 - [ ] GetAttachFiles
 - [ ] GetBoardMessage
