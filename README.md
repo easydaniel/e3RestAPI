@@ -26,12 +26,12 @@
 - [ ] DeleteQuestion
 - [ ] DeleteQuiz
 - [ ] ForgotPassword
-- [ ] GetAnnouncementDetail
-- [ ] GetAnnouncementList
-- [ ] GetAnnouncementListWithAttach
-- [ ] GetAnnouncementList_Login
-- [ ] GetAnnouncementList_LoginByCount
-- [ ] GetAnnouncementList_LoginByCountWithAttach
+- [x] GetAnnouncementDetail
+- [x] GetAnnouncementList
+- [x] GetAnnouncementListWithAttach (Same as GetAnnouncementList)
+- [x] GetAnnouncementList_Login
+- [x] GetAnnouncementList_LoginByCount
+- [x] GetAnnouncementList_LoginByCountWithAttach (Same as GetAnnouncementList_LoginByCount)
 - [ ] GetAttachFileList
 - [ ] GetAttachFiles
 - [ ] GetBoardMessage

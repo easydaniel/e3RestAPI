@@ -18,6 +18,11 @@ GET     /api/course/info                        Course.Info
 GET     /api/course/time                        Course.Time
 GET     /api/course/contact                     Course.Contact
 
+GET     /api/announce/list                      Announce.List
+GET     /api/announce/info                      Announce.Info
+GET     /api/announce/login/list                Announce.LoginList
+GET     /api/announce/login/list/:count         Announce.LoginList(:count)
+
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
