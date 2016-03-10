@@ -23,6 +23,8 @@ GET     /api/announce/info                      Announce.Info
 GET     /api/announce/login/list                Announce.LoginList
 GET     /api/announce/login/list/:count         Announce.LoginList(:count)
 
+GET     /api/homework/list                      Homework.List
+GET     /api/homework/info                      Homework.Info
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

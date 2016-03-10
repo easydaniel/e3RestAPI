@@ -2,15 +2,16 @@ package controllers
 
 import (
 	"encoding/xml"
-	"github.com/revel/revel"
 	"io/ioutil"
 	"net/http"
+
+	"github.com/revel/revel"
 )
 
 const (
-	annListUrl      = baseUrl + "/mService/service.asmx/GetAnnouncementList"
+	annListUrl      = baseUrl + "/mService/service.asmx/GetAnnouncementListWithAttach"
 	annInfoUrl      = baseUrl + "/mService/service.asmx/GetAnnouncementDetail"
-	annLoginListUrl = baseUrl + "/mService/service.asmx/GetAnnouncementList_Login"
+	annLoginListUrl = baseUrl + "/mService/service.asmx/GetAnnouncementList_LoginWithAttach"
 )
 
 type Announce struct {
@@ -34,12 +35,12 @@ type BulletinData struct {
 	ExpiredStatus         int
 	CourseName            string
 	FileName              string
-	AttachFileName        []string	`xml:"string"`
-	AttachFileURL         []string	`xml:"string"`
-	AttachFileMimeType    []string	`xml:"string"`
-	AttachFileFileSize    []string	`xml:"string"`
-	AttachFileDescription []string	`xml:"string"`
-	AttachFileCreateTime  []string	`xml:"string"`
+	AttachFileName        []string `xml:"AttachFileName>string"`
+	AttachFileURL         []string `xml:"AttachFileURL>string"`
+	AttachFileMimeType    []string `xml:"AttachFileMimeType>string"`
+	AttachFileFileSize    []string `xml:"AttachFileFileSize>string"`
+	AttachFileDescription []string `xml:"AttachFileDescription>string"`
+	AttachFileCreateTime  []string `xml:"AttachFileCreateTime>string"`
 }
 
 func (c Announce) List() revel.Result {
