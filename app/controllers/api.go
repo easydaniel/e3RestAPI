@@ -2,10 +2,11 @@ package controllers
 
 import (
 	"encoding/xml"
-	"github.com/revel/revel"
 	"io/ioutil"
 	"net/http"
 	"strings"
+
+	"github.com/revel/revel"
 )
 
 type Api struct {
@@ -39,7 +40,7 @@ func (c Api) Docs() revel.Result {
 func (c Api) GetUserInfo() revel.Result {
 
 	account := c.Request.FormValue("username")
-	password := c.Request.FormValue("passwd")
+	password := c.Request.FormValue("password")
 
 	resp, err := http.Get(loginUrl + "?account=" + account + "&password=" + password)
 	if err != nil {

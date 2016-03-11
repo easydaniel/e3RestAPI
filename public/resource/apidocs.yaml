@@ -1,292 +1,297 @@
 ---
-  swagger: "2.0"
+  swagger: 2.0
   info:
-    description: "This is a Simple E3 RestAPI documentation"
-    version: "1.0.0"
-    title: "E3 Rest"
-    termsOfService: "http://swagger.io/terms/"
+    description: This is a Simple E3 RestAPI documentation
+    version: 1.0.0
+    title: E3 Rest
+    termsOfService: http://swagger.io/terms/
     contact:
-      email: "tanchientw@outlook.com"
+      email: tanchientw@outlook.com
     license:
-      name: "Apache 2.0"
-      url: "http://www.apache.org/licenses/LICENSE-2.0.html"
-  host: "140.113.89.72:8888"
-  basePath: "/api"
+      name: Apache 2.0
+      url: http://www.apache.org/licenses/LICENSE-2.0.html
+  host: 140.113.89.72:8888
+  basePath: /api
   tags:
     -
-      name: "login"
-      description: "Get basic personal information"
+      name: login
+      description: Get basic personal information
     -
-      name: "course"
-      description: "Get course information"
+      name: course
+      description: Get course information
     -
-      name: "announce"
-      description: "Get announce information"
+      name: announce
+      description: Get announce information
   schemes:
-    - "http"
+    - http
   paths:
     /login:
       post:
         tags:
-          - "login"
-        summary: "Get basic personal information"
-        description: ""
-        operationId: ""
+          - login
+        summary: Get basic personal information
+        description:
+        operationId:
         consumes:
-          - "application/x-www-form-urlencoded"
+          - application/x-www-form-urlencoded
         produces:
-          - "application/json"
+          - application/json
         parameters:
           -
-            in: "body"
-            name: "body"
-            description: "Username and password to login"
+            in: formData
+            name: username
+            description: Username to login
             required: true
-            schema:
-              $ref: "#/definitions/user"
+            type: string
+          -
+            in: formData
+            name: password
+            description: Password to login
+            required: true
+            type: string
         responses:
           405:
-            description: "Invalid input"
+            description: Invalid input
     /course/list:
       get:
         tags:
-          - "course"
-        summary: "Get current course list"
-        description: ""
+          - course
+        summary: Get current course list
+        description:
         consumes:
-          - "application/json"
+          - application/json
         produces:
-          - "application/json"
+          - application/json
         parameters:
           -
-            in: "query"
-            name: "loginTicket"
-            description: "your login ticket"
+            in: query
+            name: loginTicket
+            description: your login ticket
             required: true
-            type: "string"
+            type: string
           -
-            in: "query"
-            name: "courseId"
-            description: "search course id"
+            in: query
+            name: accountId
+            description: your account id
             required: true
-            type: "string"
+            type: string
           -
-            in: "query"
-            name: "role"
-            description: "role"
+            in: query
+            name: role
+            description: role
             required: true
-            type: "string"
+            type: string
         responses:
           405:
-            description: "Invalid input"
+            description: Invalid input
     /course/info:
       get:
         tags:
-          - "course"
-        summary: "Get course infomation"
-        description: ""
+          - course
+        summary: Get course infomation
+        description:
         consumes:
-          - "application/json"
+          - application/json
         produces:
-          - "application/json"
+          - application/json
         parameters:
           -
-            in: "query"
-            name: "loginTicket"
-            description: "your login ticket"
+            in: query
+            name: loginTicket
+            description: your login ticket
             required: true
-            type: "string"
+            type: string
           -
-            in: "query"
-            name: "courseId"
-            description: "search course id"
+            in: query
+            name: courseId
+            description: search course id
             required: true
-            type: "string"
+            type: string
         responses:
           405:
-            description: "Invalid input"
+            description: Invalid input
     /course/time:
       get:
         tags:
-          - "course"
-        summary: "Get course time"
-        description: ""
+          - course
+        summary: Get course time
+        description:
         consumes:
-          - "application/json"
+          - application/json
         produces:
-          - "application/json"
+          - application/json
         parameters:
           -
-            in: "query"
-            name: "loginTicket"
-            description: "your login ticket"
+            in: query
+            name: loginTicket
+            description: your login ticket
             required: true
-            type: "string"
+            type: string
           -
-            in: "query"
-            name: "courseId"
-            description: "search course id"
+            in: query
+            name: courseId
+            description: search course id
             required: true
-            type: "string"
+            type: string
         responses:
           405:
-            description: "Invalid input"
+            description: Invalid input
     /course/contact:
       get:
         tags:
-          - "course"
-        summary: "Get certain course infomation"
-        description: ""
+          - course
+        summary: Get certain course infomation
+        description:
         consumes:
-          - "application/json"
+          - application/json
         produces:
-          - "application/json"
+          - application/json
         parameters:
           -
-            in: "query"
-            name: "loginTicket"
-            description: "your login ticket"
+            in: query
+            name: loginTicket
+            description: your login ticket
             required: true
-            type: "string"
+            type: string
           -
-            in: "query"
-            name: "courseId"
-            description: "search course id"
+            in: query
+            name: courseId
+            description: search course id
             required: true
-            type: "string"
+            type: string
           -
-            in: "query"
-            name: "userRole"
-            description: "your user role"
+            in: query
+            name: userRole
+            description: your user role
             required: true
-            type: "string"
+            type: string
         responses:
           405:
-            description: "Invalid input"
+            description: Invalid input
     /announce/list:
       get:
         tags:
-          - "announce"
-        summary: "Get announce list"
-        description: ""
+          - announce
+        summary: Get announce list
+        description:
         consumes:
-          - "application/json"
+          - application/json
         produces:
-          - "application/json"
+          - application/json
         parameters:
           -
-            in: "query"
-            name: "loginTicket"
-            description: "your login ticket"
+            in: query
+            name: loginTicket
+            description: your login ticket
             required: true
-            type: "string"
+            type: string
           -
-            in: "query"
-            name: "courseId"
-            description: "search course id"
+            in: query
+            name: courseId
+            description: search course id
             required: true
-            type: "string"
+            type: string
           -
-            in: "query"
-            name: "bulType"
-            description: "bulletin type"
+            in: query
+            name: bulType
+            description: bulletin type
             required: true
-            type: "string"
+            type: string
         responses:
           405:
-            description: "Invalid input"
+            description: Invalid input
     /announce/info:
       get:
         tags:
-          - "announce"
-        summary: "Get announcement information"
-        description: ""
+          - announce
+        summary: Get announcement information
+        description:
         consumes:
-          - "application/json"
+          - application/json
         produces:
-          - "application/json"
+          - application/json
         parameters:
           -
-            in: "query"
-            name: "loginTicket"
-            description: "your login ticket"
+            in: query
+            name: loginTicket
+            description: your login ticket
             required: true
-            type: "string"
+            type: string
           -
-            in: "query"
-            name: "buttetinId"
-            description: "search bulletin id"
+            in: query
+            name: buttetinId
+            description: search bulletin id
             required: true
-            type: "string"
+            type: string
         responses:
           405:
-            description: "Invalid input"
+            description: Invalid input
     /announce/login/list:
       get:
         tags:
-          - "announce"
-        summary: "Get announcement list with username and password"
-        description: ""
+          - announce
+        summary: Get announcement list with username and password
+        description:
         consumes:
-          - "application/json"
+          - application/json
         produces:
-          - "application/json"
+          - application/json
         parameters:
           -
-            in: "query"
-            name: "loginTicket"
-            description: "your login ticket"
+            in: query
+            name: loginTicket
+            description: your login ticket
             required: true
-            type: "string"
+            type: string
           -
-            in: "query"
-            name: "studentId"
-            description: "your student id"
+            in: query
+            name: studentId
+            description: your student id
             required: true
-            type: "string"
+            type: string
         responses:
           405:
-            description: "Invalid input"
+            description: Invalid input
     /announce/login/list/{count}:
       get:
         tags:
-          - "announce"
-        summary: "Get certain number of announcement list with username and password"
-        description: ""
+          - announce
+        summary: Get certain number of announcement list with username and password
+        description:
         consumes:
-          - "application/json"
+          - application/json
         produces:
-          - "application/json"
+          - application/json
         parameters:
           -
-            in: "path"
-            name: "count"
-            description: "number of announcement to show"
+            in: path
+            name: count
+            description: number of announcement to show
             required: false
-            type: "integer"
+            type: integer
           -
-            in: "query"
-            name: "loginTicket"
-            description: "your login ticket"
+            in: query
+            name: loginTicket
+            description: your login ticket
             required: true
-            type: "string"
+            type: string
           -
-            in: "query"
-            name: "studentId"
-            description: "your student id"
+            in: query
+            name: studentId
+            description: your student id
             required: true
-            type: "string"
+            type: string
         responses:
           405:
-            description: "Invalid input"
+            description: Invalid input
   definitions:
     user:
-      type: "object"
+      type: object
       required:
-        - "username"
-        - "password"
+        - username
+        - password
       properties:
         username:
-          type: "string"
+          type: string
         password:
-          type: "string"
+          type: string
