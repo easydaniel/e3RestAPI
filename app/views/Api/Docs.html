@@ -37,7 +37,7 @@
       if (url && url.length > 1) {
         url = decodeURIComponent(url[1]);
       } else {
-        url = "http://localhost:8888/public/resource/apidocs.json";
+        url = "/public/resource/apidocs.yaml";
       }
 
       hljs.configure({
@@ -109,7 +109,7 @@
 </head>
 
 <body class="swagger-section">
-  <!-- <div id='header'>
+  <div id='header'>
     <div class="swagger-ui-wrap">
       <a id="logo" href="http://swagger.io">swagger</a>
       <form id='api_selector'>
@@ -122,7 +122,7 @@
         <div class='input'><a id="explore" href="#" data-sw-translate>Explore</a></div>
       </form>
     </div>
-  </div> -->
+  </div>
 
   <div id="message-bar" class="swagger-ui-wrap" data-sw-translate>&nbsp;</div>
   <div id="swagger-ui-container" class="swagger-ui-wrap"></div>
