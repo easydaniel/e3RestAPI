@@ -44,7 +44,7 @@
 - [x] GetCourseUserContactInfo
 - [ ] GetForumList
 - [ ] GetHelpClassList
-- [ ] GetHomeworkInfo
+- [x] GetHomeworkInfo
 - [ ] GetHwkSubmitInfo
 - [ ] GetHwkSubmitList
 - [ ] GetHwkSubmitListWithAttach
@@ -62,7 +62,7 @@
 - [ ] GetScoreData
 - [ ] GetScoreGradeList
 - [ ] GetStuAnnouncementList
-- [ ] GetStuHomeworkList
+- [x] GetStuHomeworkList
 - [ ] GetStuHomeworkListWithAttach
 - [ ] GetStuMaterialDocList
 - [ ] GetStuQuizList

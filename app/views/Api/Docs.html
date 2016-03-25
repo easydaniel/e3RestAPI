@@ -25,7 +25,11 @@
   <script src='/public/js/swagger/lib/jsoneditor.min.js' type='text/javascript'></script>
   <script src='/public/js/swagger/lib/marked.js' type='text/javascript'></script>
   <script src='/public/js/swagger/lib/swagger-oauth.js' type='text/javascript'></script>
-
+  <style>
+    span[style="float:right"] {
+      display: none;
+    }
+  </style>
   <!-- Some basic translations -->
   <!-- <script src='lang/translator.js' type='text/javascript'></script> -->
   <!-- <script src='lang/ru.js' type='text/javascript'></script> -->
@@ -68,28 +72,28 @@
             window.SwaggerTranslator.translate();
           }
 
-          addApiKeyAuthorization();
+          // addApiKeyAuthorization();
         },
         onFailure: function(data) {
           log("Unable to Load SwaggerUI");
         },
         docExpansion: "none",
-        jsonEditor: false,
+        jsonEditor: true,
         apisSorter: "alpha",
         defaultModelRendering: 'schema',
         showRequestHeaders: false
       });
 
-      function addApiKeyAuthorization() {
-        var key = encodeURIComponent($('#input_apiKey')[0].value);
-        if (key && key.trim() != "") {
-          var apiKeyAuth = new SwaggerClient.ApiKeyAuthorization("api_key", key, "query");
-          window.swaggerUi.api.clientAuthorizations.add("api_key", apiKeyAuth);
-          log("added key " + key);
-        }
-      }
+      // function addApiKeyAuthorization() {
+      //   var key = encodeURIComponent($('#input_apiKey')[0].value);
+      //   if (key && key.trim() != "") {
+      //     var apiKeyAuth = new SwaggerClient.ApiKeyAuthorization("api_key", key, "query");
+      //     window.swaggerUi.api.clientAuthorizations.add("api_key", apiKeyAuth);
+      //     log("added key " + key);
+      //   }
+      // }
 
-      $('#input_apiKey').change(addApiKeyAuthorization);
+      // $('#input_apiKey').change(addApiKeyAuthorization);
 
       // if you have an apiKey you would like to pre-populate on the page for demonstration purposes...
       /*
@@ -112,7 +116,7 @@
   <div id='header'>
     <div class="swagger-ui-wrap">
       <a id="logo" href="http://swagger.io">swagger</a>
-      <!-- <form id='api_selector'>
+      <form id='api_selector'>
         <div class='input'>
           <input placeholder="http://example.com/api" id="input_baseUrl" name="baseUrl" type="text" />
         </div>
@@ -120,7 +124,7 @@
           <input placeholder="api_key" id="input_apiKey" name="apiKey" type="text" />
         </div>
         <div class='input'><a id="explore" href="#" data-sw-translate>Explore</a></div>
-      </form> -->
+      </form>
     </div>
   </div>
 
