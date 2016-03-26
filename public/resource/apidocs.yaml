@@ -22,6 +22,9 @@
     -
       name: announce
       description: Get announce information
+    -
+      name: homework
+      description: Get homework information
   schemes:
     - http
   paths:
@@ -49,6 +52,7 @@
             description: Password to login
             required: true
             type: string
+            format: password
         responses:
           405:
             description: Invalid input
@@ -284,6 +288,76 @@
         responses:
           405:
             description: Invalid input
+    /homework/list:
+      get:
+        tags:
+          - homework
+        summary: Get course homework list with attach
+        description:
+        consumes:
+          - application/json
+        produces:
+          - application/json
+        parameters:
+          -
+            in: query
+            name: loginTicket
+            description: your login ticket
+            required: true
+            type: string
+          -
+            in: query
+            name: courseId
+            description: search course id
+            required: true
+            type: string
+          -
+            in: query
+            name: accountId
+            description: your account id
+            required: true
+            type: string
+          -
+            in: query
+            name: listType
+            description: homework list type
+            required: true
+            type: string
+        responses:
+          405:
+            description: Invalid input
+    /homework/info:
+      get:
+        tags:
+          - homework
+        summary: Get user homework information
+        description:
+        consumes:
+          - application/json
+        produces:
+          - application/json
+        parameters:
+          -
+            in: query
+            name: loginTicket
+            description: your login ticket
+            required: true
+            type: string
+          -
+            in: query
+            name: accountId
+            description: your account id
+            required: true
+            type: string
+          -
+            in: query
+            name: hwkId
+            description: homework id
+            required: true
+            type: string
+        responses:
+          405:
+            description: Invalid input
   definitions:
     user:
       type: object
@@ -295,3 +369,4 @@
           type: string
         password:
           type: string
+          format: password

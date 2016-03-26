@@ -4,6 +4,7 @@ import (
 	"encoding/xml"
 	"io/ioutil"
 	"net/http"
+	"reflect"
 	"strings"
 
 	"github.com/revel/revel"
@@ -60,6 +61,10 @@ func (c Api) GetUserInfo() revel.Result {
 		if user.OfficeTitle == "學生" {
 			user.Role = "stu"
 		}
+	}
+
+	if reflect.DeepEqual(user, (User{})) {
+		c.Response.Status = 405
 	}
 
 	return c.RenderJson(user)

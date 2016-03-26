@@ -4,6 +4,7 @@ import (
 	"encoding/xml"
 	"io/ioutil"
 	"net/http"
+	"reflect"
 
 	"github.com/revel/revel"
 )
@@ -85,6 +86,10 @@ func (c Announce) Info() revel.Result {
 	var parser BulletinData
 	xml.Unmarshal(body, &parser)
 
+	if reflect.DeepEqual(parser, (BulletinData{})) {
+		c.Response.Status = 405
+	}
+
 	return c.RenderJson(parser)
 }
 
@@ -112,6 +117,10 @@ func (c Announce) LoginList(count string) revel.Result {
 
 	var parser BulletinDataParser
 	xml.Unmarshal(body, &parser)
+
+	if reflect.DeepEqual(parser, (BulletinDataParser{})) {
+		c.Response.Status = 405
+	}
 
 	return c.RenderJson(parser.BulletinDataList)
 }

@@ -2,9 +2,12 @@ package controllers
 
 import (
 	"encoding/xml"
-	"github.com/revel/revel"
 	"io/ioutil"
 	"net/http"
+
+	"reflect"
+
+	"github.com/revel/revel"
 )
 
 const (
@@ -78,6 +81,10 @@ func (c Course) List() revel.Result {
 	var parser CourseDataParser
 	xml.Unmarshal(body, &parser)
 
+	if reflect.DeepEqual(parser, (CourseDataParser{})) {
+		c.Response.Status = 405
+	}
+
 	return c.RenderJson(parser.CourseList)
 }
 
@@ -98,6 +105,10 @@ func (c Course) Info() revel.Result {
 
 	var parser CourseData
 	xml.Unmarshal(body, &parser)
+
+	if reflect.DeepEqual(parser, (CourseData{})) {
+		c.Response.Status = 405
+	}
 
 	return c.RenderJson(parser)
 }
@@ -120,6 +131,10 @@ func (c Course) Time() revel.Result {
 	var parser CourseTimeParser
 	xml.Unmarshal(body, &parser)
 
+	if reflect.DeepEqual(parser, (CourseTimeParser{})) {
+		c.Response.Status = 405
+	}
+
 	return c.RenderJson(parser.TimeList)
 }
 
@@ -127,7 +142,7 @@ func (c Course) Contact() revel.Result {
 
 	LoginTicket := c.Params.Get("loginTicket")
 	CourseId := c.Params.Get("courseId")
-  UserRole := c.Params.Get("userRole")
+	UserRole := c.Params.Get("userRole")
 
 	resp, err := http.Get(crsContactUrl + "?loginTicket=" + LoginTicket + "&courseId=" + CourseId + "&userRole=" + UserRole)
 	if err != nil {
@@ -141,6 +156,10 @@ func (c Course) Contact() revel.Result {
 
 	var parser ContactInfoParser
 	xml.Unmarshal(body, &parser)
+
+	if reflect.DeepEqual(parser, (ContactInfoParser{})) {
+		c.Response.Status = 405
+	}
 
 	return c.RenderJson(parser.InfoList)
 }

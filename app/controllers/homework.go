@@ -4,6 +4,7 @@ import (
 	"encoding/xml"
 	"io/ioutil"
 	"net/http"
+	"reflect"
 
 	"github.com/revel/revel"
 )
@@ -106,6 +107,10 @@ func (c Homework) List() revel.Result {
 	var parser StuHomeworkDataParser
 	xml.Unmarshal(body, &parser)
 
+	if reflect.DeepEqual(parser, (StuHomeworkDataParser{})) {
+		c.Response.Status = 405
+	}
+
 	return c.RenderJson(parser.StuHomeworkDataList)
 }
 
@@ -129,6 +134,10 @@ func (c Homework) Info() revel.Result {
 
 	var parser HomeworkData
 	xml.Unmarshal(body, &parser)
+
+	if reflect.DeepEqual(parser, (HomeworkData{})) {
+		c.Response.Status = 405
+	}
 
 	return c.RenderJson(parser)
 }
